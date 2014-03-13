@@ -2,7 +2,7 @@
 
 ##Project Proposal##
 
-###Title: “Fair Sharer”### 
+###Title: Fair Sharer### 
 
 ###Problem Statement:###
 
@@ -27,7 +27,7 @@ Our system eliminates hassle; there is no more need to hound your roommate for t
 * Reporting monthly/weekly expenses (Charts/graphs) (D3 API)
 * Send email to user when they have received a new charger, or when someone has committed to sharing one of your charges (Gmail API)
 
-###Some features###
+###More on Features###
 
 * Ability to join mulitple groups (Chetwynd Apartment/Travel Crew/SigEp Seniors)
 * Live updating stream of items added
