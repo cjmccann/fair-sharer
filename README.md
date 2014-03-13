@@ -2,7 +2,7 @@
 
 ##Project Proposal##
 
-###Title: Fair Sharer### 
+###Title: Fair Sharer 
 
 ###Problem Statement:###
 
