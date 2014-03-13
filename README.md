@@ -21,26 +21,28 @@ Our system eliminates hassle; there is no more need to hound your roommate for t
 
 ###Feature list:###
 
- *User accounts and data (Server-side data persistence)
- *Front-end framework: Bootstrap
- *Client-side data persistence (Logins with cookies)
- *Reporting monthly/weekly expenses (Charts/graphs) (D3 API)
- *Send email to user when they have received a new charger, or when someone has committed to sharing one of your charges (Gmail API)
+* User accounts and data (Server-side data persistence)
+* Front-end framework: Bootstrap
+* Client-side data persistence (Logins with cookies)
+* Reporting monthly/weekly expenses (Charts/graphs) (D3 API)
+* Send email to user when they have received a new charger, or when someone has committed to sharing one of your charges (Gmail API)
 
 ###Some features###
 
-  *Ability to join mulitple groups (Chetwynd Apartment/Travel Crew/SigEp Seniors)
-  *Live updating stream of items added
-  *Generate .xl files (or some other kind of spreadsheet) based on expenses
-  *Visualize your debts/credits in the past week/month/year/etc...
+* Ability to join mulitple groups (Chetwynd Apartment/Travel Crew/SigEp Seniors)
+* Live updating stream of items added
+* Generate .xl files (or some other kind of spreadsheet) based on expenses
+* Visualize your debts/credits in the past week/month/year/etc...
 
 ###Data:###
-    *Usernames and passwords
-    *List of items added, can belong to one person, can be shared
-    *User profile class to store items bought, items shared, expenses, total owed, etc
+
+* Usernames and passwords
+* List of items added, can belong to one person, can be shared
+* User profile class to store items bought, items shared, expenses, total owed, etc
 
 ###Algorithms/Special Techniques:###
-    None that we have encountered thus far
+
+None that we have encountered thus far
 
 ###Mock-Ups###
 ![Computer Generated Mock-Ups][mockup]
