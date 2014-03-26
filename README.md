@@ -47,3 +47,5 @@ None that we have encountered thus far
 ###Mock-Ups###
 ![Computer Generated Mock-Ups][mockup]
 
+#COMMENTS BY MING
+* Export to Excel is a killer feature. You can do this with many frameworks and languages, including Node.js (see https://www.npmjs.org/package/excel-export)
