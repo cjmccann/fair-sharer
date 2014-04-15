@@ -16,7 +16,7 @@ var app = express();
 var mongoUri = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/local';
 
 mongo.Db.connect(mongoUri, function (err, db) {
-  db.collection('place', function(er, collection) {
+  db.collection("places", function(er, collection) {
     collection.insert({'name': 'Chet', 'address' : '34 Chetwynd Rd'}, {safe: true}, function(er,rs) {
     });
   });
