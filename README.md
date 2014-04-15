@@ -1,16 +1,16 @@
 [mockup]: readme_images/mock_up.png
 
 ###Tuesday April 15: Check In###
--We have a basic app shell working correctly with node and a mongo database
--We have discussed the basic data structures we will implement to store data about the:
-	->Apartments
-	->Items
-	->People
--We have discussed a way to present the data, sum costs, debts, etc...
--Next steps:
-	-Write function to take apartment and/or person and generate expense table
-	-Get database representation model implemented
-	-Implement UI
+*We have a basic app shell working correctly with node and a mongo database
+*We have discussed the basic data structures we will implement to store data about the:
+	1. Apartments
+	2. Items
+	3. People
+*We have discussed a way to present the data, sum costs, debts, etc...
+*Next steps:
+	1. Write function to take apartment and/or person and generate expense table
+	2. Get database representation model implemented
+	3. Implement UI
 
 ##Project Proposal##
 
