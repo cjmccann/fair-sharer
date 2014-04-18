@@ -5,6 +5,7 @@
 
 var express = require('express');
 var routes = require('./routes');
+var home = require('./routes/home');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
@@ -39,8 +40,25 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+function checkAuth(req, res, next) {
+	if (!req.session.user_id) {
+		res.send('You are not authorized to view this page.');
+	} else {
+		next();
+	}
+}
+
 app.get('/', routes.index);
 app.get('/users', user.list);
+app.get('/home', home.home);
+
+app.post('/chkLogin.json', function (req, res) {
+	if (req.body.username == "bill" && req.body.password == "test") {
+		res.send(true);
+	} else {
+		res.send(false);
+	}
+})
 
 app.post('/addApartment', function (req, res) {
 	mongo.Db.connect(mongoUri, function (err, db) {
