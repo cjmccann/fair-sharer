@@ -1,4 +1,4 @@
-exports.home = function(req, res){
+exports.root = function(req, res){
 /*	res.contentType('text/html');
 	var data = ('home');
 	res.header('Content-Length', data.length);
@@ -7,5 +7,3 @@ exports.home = function(req, res){
 	res.render('home', {title: 'HOMEPAGE'});
 
 };
-
-

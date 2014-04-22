@@ -50,7 +50,7 @@ function checkAuth(req, res, next) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
-app.get('/home', home.home);
+app.get('/home', routes.home);
 
 app.post('/chkLogin.json', function (req, res) {
 	if (req.body.username == "bill" && req.body.password == "test") {
