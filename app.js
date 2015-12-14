@@ -4,6 +4,8 @@
  */
 
 var express = require('express');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 var routes = require('./routes');
 var home = require('./routes/home');
 var user = require('./routes/user');
@@ -23,6 +25,8 @@ mongo.Db.connect(mongoUri, function (err, db) {
   });
 });
 
+
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -32,21 +36,40 @@ app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
-app.use(app.router);
+app.configure(function() {
+  app.use(express.static('public'));
+  app.use(express.cookieParser());
+  app.use(express.bodyParser());
+  app.use(express.session({ secret: 'keyboard cat' }));
+  app.use(passport.initialize());
+  app.use(passport.session());
+  app.use(app.router);
+});
 app.use(express.static(path.join(__dirname, 'public')));
+
+console.log(passport.use);
+console.log(LocalStrategy);
+passport.use(new LocalStrategy(
+	function (username, password, done) {
+		User.findone({ username: username }, function (err, user) {
+			if (err) { return done(err); }
+			if (!user) { 
+				return done(null, false, { message: 'Incorrect username.'})
+			}
+			if (!user.validPassword(password)) {
+				return done(null, false, {message: 'Incorrect password.'});
+			}
+			return done(null, user);
+		});
+	}
+));
 
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-function checkAuth(req, res, next) {
-	if (!req.session.user_id) {
-		res.send('You are not authorized to view this page.');
-	} else {
-		next();
-	}
-}
+app.post('/login', passport.authenticate('local', { successRedirect: '/home' }));
 
 app.get('/', routes.index);
 app.get('/users', user.list);

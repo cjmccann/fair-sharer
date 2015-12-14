@@ -4,9 +4,9 @@ var passfield = $("input[type=password]");
             $('button[type="submit"]').click(function(e) {
                 e.preventDefault();
 
-                $.post("chkLogin.json", { username:textfield.val(), password:passfield.val()}).done(
+                $.post("login", { username:textfield.val(), password:passfield.val()}).done(
                         function (response) {
-                            if (response == true) {
+                            if (response.user) {
                                 console.log(true);
                                 console.log("WHAT");
                                 $("#output").addClass("alert alert-success animated fadeInUp").html("Welcome back " + "<span style='text-transform:uppercase'>" + textfield.val() + "</span>");
